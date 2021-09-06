@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  bash:
+    image: dev-kit:latest
+    networks:
+      - dev-kit-network
+    volumes:
+      - .:/home/appuser/workspace
+    command: bash
+
+networks:
+  dev-kit-network:
+    driver: bridge
+    ipam:
+      driver: default
