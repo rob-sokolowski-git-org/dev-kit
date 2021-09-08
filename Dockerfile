@@ -15,19 +15,20 @@ RUN apt-get install -y \
 # Don't run rest as root
 RUN useradd -ms /bin/bash appuser
 USER appuser
-WORKDIR /code
 
+RUN mkdir /home/appuser/workspace
+RUN mkdir /home/appuser/install
+WORKDIR /home/appuser/install
+
+# install pip-tools
 RUN pip install --user --upgrade pip
 ENV PATH="${PATH}:/home/appuser/.local/bin"
 RUN pip install --user pip-tools
 
-RUN mkdir /home/appuser/workspace
-RUN mkdir /home/appuser/install
-
-WORKDIR /home/appuser/install
+# pip-install our resolved-dependency graph
 COPY ./requirements.txt ./requirements.txt
 RUN pip install --user -r ./requirements.txt
 
 WORKDIR /home/appuser/workspace
 
-# no CMD
+# CMD omitted intentionally
