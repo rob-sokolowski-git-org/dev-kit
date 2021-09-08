@@ -9,6 +9,15 @@ services:
       - .:/home/appuser/workspace
     command: bash
 
+  resolve_dependencies:
+    image: dev-kit:latest
+    volumes:
+      - ./:/home/appuser/workspace
+    working_dir: /home/appuser/workspace
+    networks:
+      - dev-kit-network
+    command: pip-compile -r ./requirements.in
+
 networks:
   dev-kit-network:
     driver: bridge
