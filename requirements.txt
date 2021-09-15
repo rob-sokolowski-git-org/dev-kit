@@ -13,13 +13,19 @@ attrs==21.2.0
     #   aiohttp
     #   pytest
 certifi==2021.5.30
-    # via requests
+    # via
+    #   elastic-transport
+    #   requests
 chardet==4.0.0
     # via aiohttp
 charset-normalizer==2.0.4
     # via requests
 click==7.1.2
     # via uvicorn
+elastic-enterprise-search==7.14.0
+    # via -r ./requirements.in
+elastic-transport==7.14.0
+    # via elastic-enterprise-search
 fastapi==0.63.0
     # via -r ./requirements.in
 h11==0.12.0
@@ -56,6 +62,8 @@ pydantic==1.7.3
     # via
     #   -r ./requirements.in
     #   fastapi
+pyjwt==2.1.0
+    # via elastic-enterprise-search
 pyparsing==2.4.7
     # via packaging
 pytest==6.2.2
@@ -69,6 +77,7 @@ pytest-mock==3.5.1
     # via -r ./requirements.in
 python-dateutil==2.8.2
     # via
+    #   elastic-enterprise-search
     #   pandas
     #   pendulum
 pytz==2021.1
@@ -82,7 +91,10 @@ scikit-learn==0.24.1
 scipy==1.7.1
     # via scikit-learn
 six==1.16.0
-    # via python-dateutil
+    # via
+    #   elastic-enterprise-search
+    #   elastic-transport
+    #   python-dateutil
 starlette==0.13.6
     # via fastapi
 threadpoolctl==2.2.0
@@ -92,7 +104,9 @@ toml==0.10.2
 typing-extensions==3.10.0.2
     # via aiohttp
 urllib3==1.26.6
-    # via requests
+    # via
+    #   elastic-transport
+    #   requests
 uvicorn==0.13.3
     # via -r ./requirements.in
 yarl==1.6.3
