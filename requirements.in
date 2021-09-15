@@ -10,3 +10,4 @@ pytest-asyncio==0.15.1
 pytest-mock==3.5.1
 aiohttp==3.7.4.post0
 requests==2.26.0
+elastic-enterprise-search==7.14.0
