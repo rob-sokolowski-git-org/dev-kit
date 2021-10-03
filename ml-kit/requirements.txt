@@ -4,6 +4,10 @@
 #
 #    pip-compile ./requirements.in
 #
+absl-py==0.14.1
+    # via
+    #   tensorboard
+    #   tensorflow
 aiohttp==3.7.4.post0
     # via -r ./requirements.in
 anyio==3.3.2
@@ -12,6 +16,8 @@ argon2-cffi==21.1.0
     # via
     #   jupyter-server
     #   notebook
+astunparse==1.6.3
+    # via tensorflow
 async-timeout==3.0.1
     # via aiohttp
 attrs==21.2.0
@@ -25,6 +31,8 @@ backcall==0.2.0
     # via ipython
 bleach==4.1.0
     # via nbconvert
+cachetools==4.2.4
+    # via google-auth
 certifi==2021.5.30
     # via
     #   elastic-transport
@@ -35,6 +43,8 @@ chardet==4.0.0
     # via aiohttp
 charset-normalizer==2.0.6
     # via requests
+clang==5.0
+    # via tensorflow
 click==7.1.2
     # via uvicorn
 debugpy==1.4.3
@@ -54,8 +64,26 @@ entrypoints==0.3
     #   nbconvert
 fastapi==0.63.0
     # via -r ./requirements.in
+flatbuffers==1.12
+    # via tensorflow
+gast==0.4.0
+    # via tensorflow
+google-auth==1.35.0
+    # via
+    #   google-auth-oauthlib
+    #   tensorboard
+google-auth-oauthlib==0.4.6
+    # via tensorboard
+google-pasta==0.2.0
+    # via tensorflow
+grpcio==1.41.0
+    # via
+    #   tensorboard
+    #   tensorflow
 h11==0.12.0
     # via uvicorn
+h5py==3.1.0
+    # via tensorflow
 idna==3.2
     # via
     #   anyio
@@ -118,7 +146,13 @@ jupyterlab-pygments==0.1.2
 jupyterlab-server==2.8.2
     # via jupyterlab
 keras==2.6.0
-    # via -r ./requirements.in
+    # via
+    #   -r ./requirements.in
+    #   tensorflow
+keras-preprocessing==1.1.2
+    # via tensorflow
+markdown==3.3.4
+    # via tensorboard
 markupsafe==2.0.1
     # via jinja2
 matplotlib-inline==0.1.3
@@ -151,15 +185,23 @@ nest-asyncio==1.5.1
     #   nbclient
 notebook==6.4.4
     # via nbclassic
-numpy==1.21.1
+numpy==1.19.5
     # via
-    #   -r ./requirements.in
+    #   h5py
+    #   keras-preprocessing
+    #   opt-einsum
     #   pandas
     #   patsy
     #   plotly-express
     #   scikit-learn
     #   scipy
     #   statsmodels
+    #   tensorboard
+    #   tensorflow
+oauthlib==3.1.1
+    # via requests-oauthlib
+opt-einsum==3.3.0
+    # via tensorflow
 packaging==21.0
     # via
     #   bleach
@@ -197,12 +239,22 @@ prometheus-client==0.11.0
     #   notebook
 prompt-toolkit==3.0.20
     # via ipython
+protobuf==3.18.0
+    # via
+    #   tensorboard
+    #   tensorflow
 ptyprocess==0.7.0
     # via
     #   pexpect
     #   terminado
 py==1.10.0
     # via pytest
+pyasn1==0.4.8
+    # via
+    #   pyasn1-modules
+    #   rsa
+pyasn1-modules==0.2.8
+    # via google-auth
 pycparser==2.20
     # via cffi
 pydantic==1.7.3
@@ -250,9 +302,15 @@ requests==2.26.0
     # via
     #   -r ./requirements.in
     #   jupyterlab-server
+    #   requests-oauthlib
     #   requests-unixsocket
+    #   tensorboard
+requests-oauthlib==1.3.0
+    # via google-auth-oauthlib
 requests-unixsocket==0.2.0
     # via jupyter-server
+rsa==4.7.2
+    # via google-auth
 scikit-learn==0.24.1
     # via -r ./requirements.in
 scipy==1.7.1
@@ -264,14 +322,21 @@ send2trash==1.8.0
     # via
     #   jupyter-server
     #   notebook
-six==1.16.0
+six==1.15.0
     # via
+    #   absl-py
+    #   astunparse
     #   bleach
     #   elastic-enterprise-search
     #   elastic-transport
+    #   google-auth
+    #   google-pasta
+    #   grpcio
+    #   keras-preprocessing
     #   patsy
     #   plotly
     #   python-dateutil
+    #   tensorflow
 sniffio==1.2.0
     # via anyio
 starlette==0.13.6
@@ -280,6 +345,18 @@ statsmodels==0.13.0
     # via plotly-express
 tenacity==8.0.1
     # via plotly
+tensorboard==2.6.0
+    # via tensorflow
+tensorboard-data-server==0.6.1
+    # via tensorboard
+tensorboard-plugin-wit==1.8.0
+    # via tensorboard
+tensorflow==2.6.0
+    # via -r ./requirements.in
+tensorflow-estimator==2.6.0
+    # via tensorflow
+termcolor==1.1.0
+    # via tensorflow
 terminado==0.12.1
     # via
     #   jupyter-server
@@ -310,8 +387,10 @@ traitlets==5.1.0
     #   nbconvert
     #   nbformat
     #   notebook
-typing-extensions==3.10.0.2
-    # via aiohttp
+typing-extensions==3.7.4.3
+    # via
+    #   aiohttp
+    #   tensorflow
 urllib3==1.26.7
     # via
     #   elastic-transport
@@ -325,6 +404,15 @@ webencodings==0.5.1
     # via bleach
 websocket-client==1.2.1
     # via jupyter-server
+werkzeug==2.0.1
+    # via tensorboard
+wheel==0.37.0
+    # via
+    #   astunparse
+    #   tensorboard
+    #   tensorflow
+wrapt==1.12.1
+    # via tensorflow
 yarl==1.6.3
     # via aiohttp
 

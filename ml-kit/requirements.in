@@ -1,8 +1,9 @@
+# intentional omissions:
+#  * numpy - pulled in via various direct deps, let resolution decide version
 scikit-learn==0.24.1
 fastapi==0.63.0
 pydantic==1.7.3
 pandas==1.2.1
-numpy==1.21.1
 uvicorn==0.13.3
 pendulum==2.1.2
 pytest==6.2.2
@@ -13,4 +14,5 @@ requests==2.26.0
 keras==2.6.0
 jupyterlab==3.1.14
 plotly-express==0.4.1
+tensorflow==2.6.0
 elastic-enterprise-search==7.14.0
