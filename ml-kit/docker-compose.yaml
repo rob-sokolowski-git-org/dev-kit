@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+  bash:
+    image: dev-kit:latest
+    networks:
+      - ml-kit-network
+    volumes:
+      - .:/home/appuser/workspace
+    command: bash
+
+  resolve_dependencies:
+    image: ml-kit:latest
+    volumes:
+      - ./:/home/appuser/workspace
+    working_dir: /home/appuser/workspace
+    networks:
+      - ml-kit-network
+    command: pip-compile -r ./requirements.in
+
+  jupyter:
+    image: ml-kit:latest
+    volumes:
+      - ./:/home/appuser/workspace
+    working_dir: /home/appuser/workspace
+    ports:
+      - "8888:8888"
+    networks:
+      - ml-kit-network
+    command: jupyter lab --ip 0.0.0.0
+
+networks:
+  ml-kit-network:
+    driver: bridge
+    ipam:
+      driver: default
