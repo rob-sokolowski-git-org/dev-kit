@@ -161,6 +161,8 @@ matplotlib-inline==0.1.3
     #   ipython
 mistune==0.8.4
     # via nbconvert
+mmh3==3.0.0
+    # via -r ./requirements.in
 multidict==5.1.0
     # via
     #   aiohttp
