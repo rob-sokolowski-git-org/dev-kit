@@ -1,2 +1,2 @@
-# dev-kit
-dev-tooling, containerized for "deploying" to your dev setup
+# ml-kit
+tooling, containerized for "deploying" to your local ml setup
