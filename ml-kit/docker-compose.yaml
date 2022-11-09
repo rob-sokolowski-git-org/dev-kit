@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   bash:
-    image: ml-kit:latest
+    image: robsokolowski/ml-kit:latest
     networks:
       - ml-kit-network
     volumes:
@@ -10,7 +10,7 @@ services:
     command: bash
 
   resolve_dependencies:
-    image: ml-kit:latest
+    image: robsokolowski/ml-kit:latest
     volumes:
       - ./:/home/appuser/workspace
     working_dir: /home/appuser/workspace
@@ -19,7 +19,7 @@ services:
     command: pip-compile -r ./requirements.in
 
   jupyter:
-    image: ml-kit:latest
+    image: robsokolowski/ml-kit:latest
     volumes:
       - ./:/home/appuser/workspace
     working_dir: /home/appuser/workspace
