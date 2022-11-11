@@ -14,3 +14,4 @@ requests
 jupyterlab
 plotly-express
 mmh3
+duckdb

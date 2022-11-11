@@ -14,6 +14,7 @@ services:
     image: robsokolowski/ds-kit:latest
     volumes:
       - ./:/home/appuser/workspace
+      - $HOME/data:/home/appuser/data
     working_dir: /home/appuser/workspace
     ports:
       - "8888:8888"
