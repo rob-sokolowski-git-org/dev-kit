@@ -1,0 +1,16 @@
+# intentional omissions:
+#  * numpy - pulled in via various direct deps, let resolution decide version
+scikit-learn
+fastapi
+pydantic
+pandas
+uvicorn
+pendulum
+pytest
+pytest-asyncio
+pytest-mock
+aiohttp
+requests
+jupyterlab
+plotly-express
+mmh3
