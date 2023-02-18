@@ -14,4 +14,7 @@ requests
 jupyterlab
 plotly-express
 mmh3
-duckdb
+duckdb==0.7.0
+finnhub-python
+bls-data
+
